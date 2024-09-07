@@ -1,0 +1,116 @@
+﻿/* Gradient background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(270deg, #F9D4AC, #FFC9E3, #FF8E42);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    color: #333;
+    position: relative;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: dropdown 1s forwards ease-in-out, pulse 2s infinite ease-in-out;
+    transition: color 0.3s;
+}
+
+.spire {
+    color: orange;
+}
+
+.ex {
+    color: black;
+}
+
+.logo:hover {
+    color: #FF7F50; /* Change logo color on hover */
+}
+
+h1.drop-text {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: dropdown 1.2s forwards ease-in-out;
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8); /* Glowing effect */
+}
+
+#countdown {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* SVG Container */
+.svg-container {
+    position: absolute;
+    bottom: 20px; /* Place it near the bottom of the page */
+    right: 20px; /* Align to the right */
+}
+
+.house-svg {
+    width: 100px; /* Smaller size for the SVG */
+    height: auto;
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* Dropdown animation */
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo Pulse Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Background gradient animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

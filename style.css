@@ -1,5 +1,4 @@
-﻿/* Gradient background */
-body {
+﻿body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(270deg, #F9D4AC, #FFC9E3, #FF8E42);
@@ -9,10 +8,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
     text-align: center;
     color: #333;
     position: relative;
+    min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
 }
 
 .container {
@@ -42,7 +41,7 @@ body {
 }
 
 .logo:hover {
-    color: #FF7F50; /* Change logo color on hover */
+    color: #FF7F50; 
 }
 
 h1.drop-text {
@@ -51,7 +50,7 @@ h1.drop-text {
     opacity: 0;
     transform: translateY(-50px);
     animation: dropdown 1.2s forwards ease-in-out;
-    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8);
 }
 
 #countdown {
@@ -59,20 +58,24 @@ h1.drop-text {
     font-weight: bold;
 }
 
-/* SVG Container */
 .svg-container {
     position: absolute;
-    bottom: 20px; /* Place it near the bottom of the page */
-    right: 20px; /* Align to the right */
+    bottom: 20px;
+    right: 20px;
 }
 
 .house-svg {
-    width: 100px; /* Smaller size for the SVG */
+    width: 100px; 
     height: auto;
-    opacity: 0.8; /* Slight transparency */
+    opacity: 0.8; 
+}
+/* Add this to ensure scrolling works if content exceeds the height */
+html, body {
+    overflow-y: auto; /* Ensures the page is scrollable */
+    height: auto;
+    min-height: 100vh;
 }
 
-/* Dropdown animation */
 @keyframes dropdown {
     from {
         opacity: 0;
@@ -85,7 +88,6 @@ h1.drop-text {
     }
 }
 
-/* Logo Pulse Effect */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -100,7 +102,6 @@ h1.drop-text {
     }
 }
 
-/* Background gradient animation */
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -114,3 +115,66 @@ h1.drop-text {
         background-position: 0% 50%;
     }
 }
+
+.about-us {
+    width: 90vw;
+    margin-top: 20px;
+    margin-bottom: 50px; /* Adds space between About Us and the SVG */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    border-radius: 10px;
+}
+
+    .about-us h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .about-us h3 {
+        font-size: 1.5rem;
+        color: #FF7F50; /* Matches the hover color of the logo */
+        margin-bottom: 15px;
+    }
+
+    .about-us p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #333;
+    }
+
+.our-services {
+    width: 90vw;
+    margin-top: 0px;
+    margin-bottom: 200px; /* Adds space between About Us and the SVG */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    border-radius: 10px;
+}
+
+    .our-services h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .our-services ul {
+        list-style-type: none; /* Removes default list styling */
+        padding: 0; /* Removes default padding */
+    }
+
+    .our-services li {
+        margin: 10px 0; /* Adds space between list items */
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: #333;
+        position: relative;
+    }
+
+        .our-services li:before {
+            content: '-'; /* Adds a dash before each list item */
+            position: absolute;
+            left: -20px; /* Adjusts dash position */
+            color: #FF7F50; /* Matches the color theme */
+            font-weight: bold;
+        }

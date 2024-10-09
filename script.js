@@ -1,8 +1,6 @@
-// JavaScript source code
-// Set the date we're counting down to
+
 const countDownDate = new Date("Nov 1, 2024 23:59:59").getTime();
 
-// Update the countdown every second
 const countdownFunction = setInterval(function () {
     const now = new Date().getTime();
     const distance = countDownDate - now;
